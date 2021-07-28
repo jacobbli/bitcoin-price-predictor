@@ -1,20 +1,10 @@
 import React from 'react';
 import axios from 'axios'
-import { Form, Input, Button, Card, Modal, Alert } from 'antd';
+import { Form, Input, Button, Card, Modal } from 'antd';
 import 'antd/dist/antd.css';
 import './PredictionForm.css';
 
 class PredictionForm extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  
-  handleOk = () => {
-    this.setState({
-      isModalVisible: false
-    })
-  }
-
   isProfitable(prediction) {
     if (prediction === 'PROFITABLE') {
       Modal.success({

@@ -26,7 +26,7 @@ app.add_middleware(
 )
 
 @app.get("/")
-def get_prediction(ema_diff: int, sma_diff: int):
+def get_prediction(ema_diff: float, sma_diff: float):
     
     sample = [[ema_diff, sma_diff]]
     print(sample)
