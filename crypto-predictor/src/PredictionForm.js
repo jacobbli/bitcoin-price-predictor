@@ -41,7 +41,7 @@ class PredictionForm extends React.Component {
   }
 
   submitForm = values => {
-    axios.get("http://127.0.0.1:8000", {
+    axios.get("https://bitcoin-price-predictor-server.herokuapp.com/", {
       params: {
         'ema_diff': values.emaDiff,
         'sma_diff': values.smaDiff
