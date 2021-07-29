@@ -25,13 +25,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
+@app.get("/prediction")
 def get_prediction(ema_diff: float, sma_diff: float):
     
     sample = [[ema_diff, sma_diff]]
-    print(sample)
     prediction = clf.predict(sample)
 
     return prediction[0]
 
+@app.get("/")
+def get_today_prediction():
+    df = pd.read_csv("classification-dataset.csv", usecols=['EMA_diff', 'SMA_diff'])
+    today = df.tail(1)
+    sample = [[today['EMA_diff'][2774], today['SMA_diff'][2774]]]
+    prediction = clf.predict(sample)
+    return prediction[0]
 
+@app.get("/prices")
+def get_prices():
+    df = pd.read_csv("bitcoin.csv", usecols=['Date', 'Close'])
+    price_list = df.head(30).values.tolist()
+    return price_list

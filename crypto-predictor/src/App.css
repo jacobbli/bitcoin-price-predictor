@@ -40,3 +40,7 @@
     transform: rotate(360deg);
   }
 }
+
+.trend-viewer {
+  margin-top: 100px;
+}

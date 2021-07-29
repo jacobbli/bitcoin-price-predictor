@@ -1,7 +1,8 @@
 import './App.css';
 import PredictionForm from './PredictionForm';
+import TrendViewer from './TrendViewer';
 
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
 
 const { Header, Content, Footer } = Layout;
@@ -17,7 +18,14 @@ function App() {
         </Menu>
       </Header>
       <Content>
-        <PredictionForm/>
+        <Row gutter={16}>
+          <Col span={16} offset={1}>
+            <TrendViewer />
+          </Col>
+          <Col span={3}>
+            <PredictionForm/>
+          </Col>
+        </Row>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
         Crypto Crips ©2021

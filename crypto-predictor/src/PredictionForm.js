@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'
-import { Form, Input, Button, Card, Modal } from 'antd';
+import { Form, Button, Card, Modal, Input } from 'antd';
+
 import 'antd/dist/antd.css';
 import './PredictionForm.css';
 
@@ -31,7 +32,7 @@ class PredictionForm extends React.Component {
   }
 
   submitForm = values => {
-    axios.get("https://bitcoin-price-predictor-server.herokuapp.com/", {
+    axios.get("https://bitcoin-price-predictor-server.herokuapp.com/prediction", {
       params: {
         'ema_diff': values.emaDiff,
         'sma_diff': values.smaDiff
@@ -51,7 +52,7 @@ class PredictionForm extends React.Component {
         <Card 
           id="card"
           title="Bitcoin Price Predictor"
-          style={{ width: 500 }}>
+          style={{ width: 400 }}>
           <Form 
             name="prediction-form"
             labelCol={{ span: 12 }}
@@ -63,11 +64,11 @@ class PredictionForm extends React.Component {
               rules={[
                 {
                   required: true,
-                  message: 'Please enter the 2-day EMA difference!',
+                  message: 'Please enter a valid number',
                 },
               ]}
             >
-              <Input />
+              <Input addonBefore="$"/>
             </Form.Item>
             <Form.Item
               label="2-day SMA difference"
@@ -75,11 +76,11 @@ class PredictionForm extends React.Component {
               rules={[
                 {
                   required: true,
-                  message: 'Please enter the 2-day SMA difference!',
+                  message: 'Please enter a valid number',
                 },
               ]}
             >
-              <Input />
+              <Input addonBefore="$" />
             </Form.Item>
               <Form.Item
                 wrapperCol={{ offset: 12, span: 1}}
