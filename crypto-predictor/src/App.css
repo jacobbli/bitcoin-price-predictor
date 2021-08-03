@@ -44,3 +44,17 @@
 .trend-viewer {
   margin-top: 100px;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,700&display=swap');
+
+.logo-text {
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  font-size: 32px;
+  padding-right: 100px
+}
+
+#header {
+  display: flex;
+}

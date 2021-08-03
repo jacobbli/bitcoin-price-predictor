@@ -1,38 +1,88 @@
 import './App.css';
-import PredictionForm from './PredictionForm';
-import TrendViewer from './TrendViewer';
+import LoginForm from './LoginForm';
 
-import { Layout, Menu, Row, Col } from 'antd';
+import { Layout, Menu } from 'antd';
 import 'antd/dist/antd.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import React from 'react';
+import TrendViewer from './TrendViewer';
+import PredictionForm from './PredictionForm';
 
 const { Header, Content, Footer } = Layout;
 
-function App() {
-  return (
-    <div className="App">
-      <Layout className="layout" style={{height: '100%'}}>
-      <Header>
-        <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-          <Menu.Item key={2}>Bitcoin Price Predictor</Menu.Item>
-        </Menu>
-      </Header>
-      <Content>
-        <Row gutter={16}>
-          <Col span={16} offset={1}>
-            <TrendViewer />
-          </Col>
-          <Col span={3}>
-            <PredictionForm/>
-          </Col>
-        </Row>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        Crypto Crips ©2021
-      </Footer>
-      </Layout>
-    </div>
-  );
+
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        isLoggedIn: false
+    };
+  }
+
+  logIn = () => {
+    this.setState({
+      isLoggedIn: true
+    })
+  }
+
+  logout = () => {
+    this.setState({
+      isLoggedIn: false
+    })
+  }
+
+
+
+  render() {
+    let menu;
+    if (this.state.isLoggedIn) {
+      menu =             
+      <Menu id="menu" theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+        <Menu.Item key={1}><Link to="/trend">Trend Viewer</Link></Menu.Item>
+        <Menu.Item key={2}><Link to="/predict">Prediction Tester</Link></Menu.Item>
+        <Menu.Item key={3}><Link to="/" onClick={this.logout}>Logout</Link></Menu.Item>
+      </Menu>
+    } else {
+      menu = ""
+    }
+    console.log(menu)
+
+    return (
+      <Router>
+        <div className="App">
+          <Layout className="layout" style={{height: '100%'}}>
+            <Header id="header">
+              {/* <div className="logo" /> */}
+              <div className="logo-text">CryptoCrips</div>
+              {menu}
+            </Header>
+            <Content>
+              <Switch>
+                <Route exact path="/">
+                  <LoginForm authStatus = {this.logIn}/>
+                </Route>
+                <Route path="/trend">
+                  <TrendViewer />
+                </Route>
+                <Route path="/predict">
+                  <PredictionForm />
+                </Route>
+              </Switch>
+            </Content>
+            <Footer style={{ textAlign: 'center' }}>
+              Crypto Crips ©2021
+            </Footer>
+          </Layout>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

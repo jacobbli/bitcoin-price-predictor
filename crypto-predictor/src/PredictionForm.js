@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios'
-import { Form, Button, Card, Modal, Input } from 'antd';
+import { Form, Button, Card, Modal, Input, Row, Col } from 'antd';
 
 import 'antd/dist/antd.css';
 import './PredictionForm.css';
@@ -49,6 +49,8 @@ class PredictionForm extends React.Component {
   render() {
    return (
       <div className="prediction-form">
+        <Row justify="center">
+          <Col>
         <Card 
           id="card"
           title="Bitcoin Price Predictor"
@@ -93,6 +95,8 @@ class PredictionForm extends React.Component {
             </Form.Item>
           </Form>
         </Card>
+        </Col>
+        </Row>
       </div>
     );
   }

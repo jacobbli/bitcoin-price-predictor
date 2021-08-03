@@ -38,18 +38,18 @@ class TrendViewer extends React.Component {
     }
 
     getPrediction = () => {
-        axios.get("https://bitcoin-price-predictor-server.herokuapp.com/")
-          .then (res => {
-            this.setState({
-                prediction: res['data'],
-                config: {
-                    data: res['data'],
-                }
-            })
-          })
-          .catch(err => {
-            console.error(err);
-        })
+        // axios.get("https://bitcoin-price-predictor-server.herokuapp.com/")
+        //   .then (res => {
+        //     this.setState({
+        //         prediction: res['data'],
+        //         config: {
+        //             data: res['data'],
+        //         }
+        //     })
+        //   })
+        //   .catch(err => {
+        //     console.error(err);
+        // })
     }
 
     componentDidMount() {
@@ -97,7 +97,7 @@ class TrendViewer extends React.Component {
                 <Row justify='center'>
                     <Col span={24}>
                         <Card>
-                            {/* <PriceChart data={this.state.priceData} /> */}
+                            <PriceChart data={this.state.priceData} />
                         </Card>
                     </Col>
                 </Row>
