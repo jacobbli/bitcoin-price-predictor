@@ -1,68 +1,73 @@
 import React from 'react';
 import { Form, Button, Card, Input, Row, Col } from 'antd';
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+
 import 'antd/dist/antd.css';
 import './LoginForm.css';
 
-class LoginForm extends React.Component {
+function LoginForm(props) {
+    let history = useHistory();
 
-    submitForm = () => {
-        this.props.authStatus()
+    function submitForm() {
+        props.authStatus();
+        history.push("/trend");
     }
 
-  render() {
-   return (
-      <div className="login-form">
-        <Row justify="center">
-            <Col>
-                <Card 
-                id="card"
-                title="Please Login"
-                style={{ width: 400 }}>
-                    <Form 
-                        name="login-form"
-                        wrapperCol={{ offset: 4, span: 16 }}
-                    >
-                        <Form.Item
-                        name="username"
-                        rules={[
-                            {
-                            required: true,
-                            message: 'Please enter a username',
-                            },
-                        ]}
+    return (
+        <div className="login-form">
+            <Row justify="center">
+                <Col>
+                    <Card 
+                    id="card"
+                    title="Please Login"
+                    style={{ width: 400 }}>
+                        <Form 
+                            name="login-form"
+                            wrapperCol={{ offset: 4, span: 16 }}
+                            onFinish={submitForm}
                         >
-                        <Input placeholder="Enter username" />
-                        </Form.Item>
-                        <Form.Item
-                        name="password"
-                        rules={[
-                            {
-                            required: true,
-                            message: 'Please enter a password',
-                            },
-                        ]}
-                        >
-                        <Input.Password placeholder="Enter password"/>
-                        </Form.Item>
-                        <Form.Item
-                            wrapperCol={{ offset: 8, span: 1}}
-                        >
-                            <Button 
+                            <Form.Item
+                            name="username"
+                            rules={[
+                                {
+                                required: true,
+                                message: 'Please enter a username',
+                                },
+                            ]}
+                            >
+                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+                            </Form.Item>
+                            <Form.Item
+                            name="password"
+                            rules={[
+                                {
+                                required: true,
+                                message: 'Please enter a password',
+                                },
+                            ]}
+                            >
+                                <Input
+                                    prefix={<LockOutlined className="site-form-item-icon" />}
+                                    type="password"
+                                    placeholder="Password"
+                                />
+                            </Form.Item>
+                            <Form.Item>
+                                <Button 
+                                id="login-button"
                                 type="primary" 
                                 htmlType="submit"
-                                onClick={this.submitForm}
-                            >
-                                <Link to="/trend">Login</Link> 
-                            </Button>
-                        </Form.Item>
-                    </Form>
-                </Card>
-            </Col>
-        </Row>
-      </div>
-    );
-  }
+                                >
+                                    Login
+                                </Button>
+                            </Form.Item>
+                        </Form>
+                    </Card>
+                </Col>
+            </Row>
+        </div>
+    )
 }
 
   export default LoginForm;

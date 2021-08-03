@@ -51,14 +51,13 @@ class App extends React.Component {
     } else {
       menu = ""
     }
-    console.log(menu)
 
     return (
       <Router>
         <div className="App">
           <Layout className="layout" style={{height: '100%'}}>
             <Header id="header">
-              <div className="logo"><img src="logo.png"/></div>
+              <div className="logo"><img src="logo.png" alt="logo"/></div>
               <div className="logo-text">CryptoCrips</div>
               {menu}
             </Header>

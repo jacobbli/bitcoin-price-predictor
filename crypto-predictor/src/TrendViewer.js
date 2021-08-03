@@ -21,7 +21,7 @@ class TrendViewer extends React.Component {
     }
 
     getPrice = () => {
-        axios.get(`https://bitcoin-price-predictor-server.herokuapp.com/prices`)
+        axios.get(`http://localhost:3000/prices`)
         .then (res => {
             this.setState({
                 currentPrice: res['data'][0][1],
@@ -38,18 +38,18 @@ class TrendViewer extends React.Component {
     }
 
     getPrediction = () => {
-        // axios.get("https://bitcoin-price-predictor-server.herokuapp.com/")
-        //   .then (res => {
-        //     this.setState({
-        //         prediction: res['data'],
-        //         config: {
-        //             data: res['data'],
-        //         }
-        //     })
-        //   })
-        //   .catch(err => {
-        //     console.error(err);
-        // })
+        axios.get("http://localhost:3000/")
+          .then (res => {
+            this.setState({
+                prediction: res['data'],
+                config: {
+                    data: res['data'],
+                }
+            })
+          })
+          .catch(err => {
+            console.error(err);
+        })
     }
 
     componentDidMount() {

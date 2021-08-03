@@ -32,7 +32,7 @@ class PredictionForm extends React.Component {
   }
 
   submitForm = values => {
-    axios.get("https://bitcoin-price-predictor-server.herokuapp.com/prediction", {
+    axios.get("http://localhost:3000/prediction", {
       params: {
         'ema_diff': values.emaDiff,
         'sma_diff': values.smaDiff
@@ -47,55 +47,56 @@ class PredictionForm extends React.Component {
   }
 
   render() {
-   return (
+    return (
       <div className="prediction-form">
         <Row justify="center">
           <Col>
-        <Card 
-          id="card"
-          title="Bitcoin Price Predictor"
-          style={{ width: 400 }}>
-          <Form 
-            name="prediction-form"
-            labelCol={{ span: 12 }}
-            wrapperCol={{ span: 8 }}
-            onFinish={this.submitForm}>
-            <Form.Item
-              label="2-day EMA difference"
-              name="emaDiff"
-              rules={[
-                {
-                  required: true,
-                  message: 'Please enter a valid number',
-                },
-              ]}
+            <Card 
+              id="card"
+              title="Bitcoin Price Predictor"
+              style={{ width: 500 }}
             >
-              <Input addonBefore="$"/>
-            </Form.Item>
-            <Form.Item
-              label="2-day SMA difference"
-              name="smaDiff"
-              rules={[
-                {
-                  required: true,
-                  message: 'Please enter a valid number',
-                },
-              ]}
-            >
-              <Input addonBefore="$" />
-            </Form.Item>
-              <Form.Item
-                wrapperCol={{ offset: 12, span: 1}}
-            >
-              <Button 
-                type="primary" 
-                htmlType="submit">
-                Submit 
-              </Button>
-            </Form.Item>
-          </Form>
-        </Card>
-        </Col>
+              <Form 
+                name="prediction-form"
+                labelCol={{ span: 10 }}
+                wrapperCol={{ offset: 2, span: 8 }}
+                onFinish={this.submitForm}>
+                <Form.Item
+                  label="2-day EMA difference"
+                  name="emaDiff"
+                  rules={[
+                    {
+                      required: true,
+                      message: 'Please enter a valid number',
+                    },
+                  ]}
+                >
+                  <Input addonBefore="$"/>
+                </Form.Item>
+                <Form.Item
+                  label="2-day SMA difference"
+                  name="smaDiff"
+                  rules={[
+                    {
+                      required: true,
+                      message: 'Please enter a valid number',
+                    },
+                  ]}
+                >
+                  <Input addonBefore="$" />
+                </Form.Item>
+                  <Form.Item
+                    wrapperCol={{ offset: 12, span: 1}}
+                >
+                  <Button 
+                    type="primary" 
+                    htmlType="submit">
+                    Submit 
+                  </Button>
+                </Form.Item>
+              </Form>
+            </Card>
+          </Col>
         </Row>
       </div>
     );
