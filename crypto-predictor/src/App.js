@@ -58,7 +58,7 @@ class App extends React.Component {
         <div className="App">
           <Layout className="layout" style={{height: '100%'}}>
             <Header id="header">
-              {/* <div className="logo" /> */}
+              <div className="logo"><img src="logo.png"/></div>
               <div className="logo-text">CryptoCrips</div>
               {menu}
             </Header>
