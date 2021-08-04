@@ -1,0 +1,35 @@
+#team-info {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.ant-timeline-item-tail {
+    color: black !important
+}
+
+.site-layout-background {
+    background-color: white;
+}
+
+#team-history {
+    margin-top: 100px;
+}
+
+#timeline-row{
+    padding-top: 25px;
+}
+
+h1 {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#our-team {
+    padding-bottom: 100px;
+}
+
+html {
+    height: fit-content
+  }
