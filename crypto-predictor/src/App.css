@@ -51,13 +51,13 @@
 .logo-text {
   font-family: 'Ubuntu', sans-serif;
   color: white;
-  font-size: 32px;
+  font-size: 30px;
   padding-right: 100px
 }
 
 .logo img {
-  max-width: 45px;
-  margin-right: 10px;
+  max-width: 40px;
+  margin-right: 5px;
 
 }
 
