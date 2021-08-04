@@ -79,13 +79,13 @@ function About() {
                             
                             <Col>
                                 <TeamCard 
-                                    name='Ammaar Muzammil - CEO'
+                                    name='Ammaar Muzammil'
                                     photo='/ammaar.jpg'
                                     description={ammarDescription}/>
                             </Col>
                             <Col>
                                 <TeamCard 
-                                    name='Ajay Kaila - CIO'
+                                    name='Ajay Kaila'
                                     photo='/ajay.jpg'
                                     description={ajayDescription}/>
                             </Col>
@@ -93,13 +93,13 @@ function About() {
                         <Row align='center' gutter={16}>
                             <Col>
                                 <TeamCard 
-                                    name='Maheen Khan - CFO'
+                                    name='Maheen Khan'
                                     photo='/maheen.png'
                                     description={maheenDescription}/>
                             </Col>
                             <Col>
                                 <TeamCard 
-                                    name='Toby Oktavian Sutrisno - Senior Analyst'
+                                    name='Toby Oktavian Sutrisno'
                                     photo='/toby.png'
                                     description={tobyDescription}/>
                             </Col>
@@ -107,7 +107,7 @@ function About() {
                         <Row align='center'>
                             <Col>
                             <TeamCard 
-                                    name='Jacob Lee - CTO'
+                                    name='Jacob Lee'
                                     photo='/jacob.jpg'
                                     description={jacobDescription}/>
                             </Col>
