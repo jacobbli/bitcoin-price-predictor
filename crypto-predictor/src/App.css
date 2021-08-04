@@ -41,10 +41,6 @@
   }
 }
 
-.trend-viewer {
-  margin-top: 100px;
-}
-
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,700&display=swap');
 
@@ -56,11 +52,19 @@
 }
 
 .logo img {
-  max-width: 40px;
+  max-width: 35px;
   margin-right: 5px;
 
 }
 
 #header {
   display: flex;
+}
+
+.page-content {
+  height: 100%;
+}
+
+html {
+  height: fit-content
 }

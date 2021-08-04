@@ -5,7 +5,7 @@ import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 
 import PriceChart from './PriceChart'
 import 'antd/dist/antd.css';
-import './App.css';
+import './TrendViewer.css';
 
 
 class TrendViewer extends React.Component {
