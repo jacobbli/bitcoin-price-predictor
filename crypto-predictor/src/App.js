@@ -12,7 +12,6 @@ import {
 import React from 'react';
 import TrendViewer from './TrendViewer';
 import PredictionForm from './PredictionForm';
-import About from './About';
 
 const { Header, Content, Footer } = Layout;
 
@@ -44,11 +43,10 @@ class App extends React.Component {
     let menu;
     if (this.state.isLoggedIn) {
       menu =             
-      <Menu id="menu" theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-        <Menu.Item key={1}><Link to="/about">About us</Link></Menu.Item>
-        <Menu.Item key={2}><Link to="/trend">Trend Viewer</Link></Menu.Item>
-        <Menu.Item key={3}><Link to="/predict">Prediction Tester</Link></Menu.Item>
-        <Menu.Item key={4}><Link to="/" onClick={this.logout}>Logout</Link></Menu.Item>
+      <Menu id="menu" theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+        <Menu.Item key={1}><Link to="/trend">Trend Viewer</Link></Menu.Item>
+        <Menu.Item key={2}><Link to="/predict">Prediction Tester</Link></Menu.Item>
+        <Menu.Item key={3}><Link to="/" onClick={this.logout}>Logout</Link></Menu.Item>
       </Menu>
     } else {
       menu = ""
@@ -73,9 +71,6 @@ class App extends React.Component {
                 </Route>
                 <Route path="/predict">
                   <PredictionForm />
-                </Route>
-                <Route path="/about">
-                  <About />
                 </Route>
               </Switch>
             </Content>
