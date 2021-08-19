@@ -2,7 +2,7 @@
 
 ## Description
 
-This is part of our group project for our business analytics course (BUS 462) at Simon Fraser University.
+This is our final project for our business analytics course (BUS 462) at Simon Fraser University. Our goal is to predict whether the price of Bitcoin will increase the next day. To achieve this, we train multiple SVM and decision tree classifiers using different subsets of attributes. The model with the highest precision score will be used in our web application to make daily predictions for our "clients".
 
 Group members:
 - Ajay Kaila
@@ -11,6 +11,7 @@ Group members:
 - Ammaar Muzammil
 - Toby Oktavian Sutrisno
 
-
-A web app that predicts whether the price of Bitcoin will rise the next day based on the difference between today's EMA and yesterday's EMA, and today's SMA and yesterday's SMA.
+## Datasets
+- [Bitcoin historical daily prices from April 29, 2013 to December 12, 2020](https://www.kaggle.com/mtakcy/historical-data-for-top-20-coins-by-market-cap?sele)
+- Sentiment scores for each post on the r/CryptoCurrency subreddit from January 1, 2017 to February 17, 2018
 
