@@ -15,3 +15,7 @@ Group members:
 - [Bitcoin historical daily prices from April 29, 2013 to December 12, 2020](https://www.kaggle.com/mtakcy/historical-data-for-top-20-coins-by-market-cap?sele)
 - Sentiment scores for each post on the r/CryptoCurrency subreddit from January 1, 2017 to February 17, 2018
 
+## Tools
+
+- Python for data preparation
+- KNIME for training and evaluating the models
