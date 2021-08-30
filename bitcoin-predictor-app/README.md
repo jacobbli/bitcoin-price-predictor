@@ -42,7 +42,7 @@ The bitcoin price predictor app uses an SVM model to predict whether Bitcoin's p
     ```
 
 ### Start client
-1. Navigate to the server folder
+1. Navigate to the client folder
     ```console
     $ cd path_to_project_folder/bitcoin-predictor-app/client
     ```
