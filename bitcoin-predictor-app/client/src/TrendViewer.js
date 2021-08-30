@@ -21,7 +21,7 @@ class TrendViewer extends React.Component {
     }
 
     getPrice = () => {
-        axios.get(`http://localhost:3000/prices`)
+        axios.get(`http://localhost:8000/prices`)
         .then (res => {
             this.setState({
                 currentPrice: res['data'][0][1],
@@ -38,7 +38,7 @@ class TrendViewer extends React.Component {
     }
 
     getPrediction = () => {
-        axios.get("http://localhost:3000/")
+        axios.get("http://localhost:8000/")
           .then (res => {
             this.setState({
                 prediction: res['data'],

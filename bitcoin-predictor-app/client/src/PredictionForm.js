@@ -32,7 +32,7 @@ class PredictionForm extends React.Component {
   }
 
   submitForm = values => {
-    axios.get("http://localhost:3000/prediction", {
+    axios.get("http://localhost:8000/prediction", {
       params: {
         'ema_diff': values.emaDiff,
         'sma_diff': values.smaDiff
