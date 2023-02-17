@@ -58,7 +58,7 @@ class App extends React.Component {
           <Layout className="layout" style={{height: '100%'}}>
             <Header id="header">
               <div className="logo"><img src="logo.png" alt="logo"/></div>
-              <div className="logo-text">CryptoCrips</div>
+              <div className="logo-text">BitcoinPricePredictor</div>
               {menu}
             </Header>
             <Content className="page-content">
